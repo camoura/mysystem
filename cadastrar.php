@@ -12,13 +12,14 @@
  $funfis->bindParam(':email',$_POST['email'],PDO::PARAM_STR);
  $funfis->execute();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/signin.css" rel="stylesheet">
-    <title>Document</title>
+    <title>MYSYSTEM</title>
 </head>
 <body>
     <h1 align="center">Bem-vindo ao Mysystem !</h1>

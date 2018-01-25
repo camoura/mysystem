@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "cadastrar.php";
+//require "cadastrar.php";
 ?>
 <!DOCTYPE html>
         <html>
@@ -23,7 +23,8 @@ require "cadastrar.php";
         <input type="text" name="telefone" id="telefone" class="form-control">
         <label for="email">EMAIL</label>
         <input type="text" name="email" id="email" class="form-control"><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" >CADASTRAR</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >CADASTRAR</button><br>
+        <a button type="button" button class="btn btn-lg btn-primary btn-block" href="listar.php">LISTAR</a>
         
         </form>    
     </div>

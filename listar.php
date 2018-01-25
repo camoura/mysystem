@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/signin.css" rel="stylesheet">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/btndelete.js"></script>
   <title>Listar</title>
 </head>
 <body>
@@ -12,6 +14,7 @@
   
   <thead>
   <tr>
+  <th>ID</th>
   <th>Nome</th>
   <th>Endereço</th>
   <th>CPF</th>
@@ -23,7 +26,7 @@
 
 <?php
 require "conecta.php";
-//require "cadastrar.php";
+
 
 $pdo=conexao();
 
@@ -37,13 +40,14 @@ $res=$funfis->fetchAll(PDO::FETCH_ASSOC);
   echo ' 
   <tbody>
   <tr>
+  <td>',$row['idcliente'],'</td>
   <td>',$row['nome'],'</td>
   <td>',$row['endereco'],'</td>
   <td>',$row['cpf'],'</td>
   <td>',$row['telefone'],'</td>
   <td>',$row['email'],'</td>
-  <td><button type="button" class="btn btn-primary">Alterar</button></td>
-  <td><button type="button" class="btn btn-danger">Excluir</button></td>
+  <td><a button type="button" class="btn btn-primary" href="alterar.php?id=',$_GET=$row['idcliente'],'">Alterar</a></td>
+  <td><a button type="button"  class="btn btn-danger" id="btndelete" onclick="btndel()" href="excluir.php?id=',$_GET=$row['idcliente'],'" >Excluir</a>
   </tr>
 </tbody>';
   }
@@ -57,43 +61,3 @@ $res=$funfis->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<?php
-/*try {
-    $query = $bd->prepare($sql);
-    $query->execute(Array(':nome' => $busca));
-    $res = $query->fetchAll(PDO::FETCH_NUM);
-  } catch (PDOException $e) {
-    echo $e->getMessage();
-  }
-  '<ul>
-  <li><strong>Nome: ', $row['nome'], '</strong></li>
-  <li><strong>Endereço: ', $row['endereco'], '</strong></li>
-  <li><strong>CPF: ', $row['cpf'], '</strong></li>
-  <li><strong>Telefone: ', $row['telefone'], '</strong></li>
-  <li><strong>Email: ', $row['email'], '</strong></li>
-  </ul>';
-
-  <td>Nome: ', $row['nome'], '</td>
-  <td>Endereço: ', $row['endereco'], '</td>
-  <td>CPF: ', $row['cpf'], '</td>
-  <td>Telefone: ', $row['telefone'], '</td>
-  <td>Email: ', $row['email'], '</td>
-
-try {
-  $listar=$pdo->query('SELECT * FROM clientes');
-  $listar->execute();
-
-  if ($listar -> rowCount() > 0):
-    return $listar->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($listar);
-  endif;
-}
-catch (PDOException $erro ){
-  echo "Erro ao tentar se conectar ao DB" . $erro->getMessage();
-}
-
-  */
-
-
-
-?>
